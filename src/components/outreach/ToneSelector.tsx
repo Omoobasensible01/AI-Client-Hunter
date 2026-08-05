@@ -1,5 +1,3 @@
-"use client";
-
 interface ToneSelectorProps {
   value?: string;
   onChange?: (value: string) => void;

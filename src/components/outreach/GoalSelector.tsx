@@ -1,23 +1,41 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+interface GoalSelectorProps {
+  value?: string;
+  onChange?: (value: string) => void;
+}
 
-const goals = ["Book a call", "Share a resource", "Start a conversation"];
+const goals = [
+  "Book Discovery Call",
+  "Offer Free Audit",
+  "Schedule Demo",
+  "Send Proposal",
+  "Follow Up",
+  "Reconnect",
+];
 
-export default function GoalSelector() {
+export default function GoalSelector({
+  value,
+  onChange,
+}: GoalSelectorProps) {
   return (
-    <Card className="rounded-3xl border border-slate-200 bg-white shadow-sm">
-      <CardHeader className="px-6 py-5">
-        <CardTitle>Goal</CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-wrap gap-2 p-6 pt-0">
+    <div>
+      <label className="mb-2 block text-sm font-medium">
+        Goal
+      </label>
+
+      <select
+        value={value ?? goals[0]}
+        onChange={(e) => onChange?.(e.target.value)}
+        className="w-full rounded-xl border p-3"
+      >
         {goals.map((goal) => (
-          <span
+          <option
             key={goal}
-            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm text-slate-700"
+            value={goal}
           >
             {goal}
-          </span>
+          </option>
         ))}
-      </CardContent>
-    </Card>
+      </select>
+    </div>
   );
 }

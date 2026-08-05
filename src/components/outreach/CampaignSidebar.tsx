@@ -1,25 +1,39 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+interface Props {
+  company?: string;
+  channel?: string;
+  tone?: string;
+  goal?: string;
+}
 
-const items = [
-  { label: "Status", value: "Drafting" },
-  { label: "Audience", value: "Design leads" },
-  { label: "Last updated", value: "2h ago" },
-];
-
-export default function CampaignSidebar() {
+export default function CampaignSidebar({
+  company = "AI Client Hunter",
+  channel = "Email",
+  tone = "Professional",
+  goal = "Book Discovery Call",
+}: Props) {
   return (
-    <Card className="rounded-3xl border border-slate-200 bg-white shadow-sm">
-      <CardHeader className="px-6 py-5">
-        <CardTitle>Campaign</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-3 p-6 pt-0">
-        {items.map((item) => (
-          <div key={item.label} className="rounded-2xl bg-slate-50 p-3">
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">{item.label}</p>
-            <p className="mt-1 text-sm font-medium text-slate-800">{item.value}</p>
-          </div>
-        ))}
-      </CardContent>
-    </Card>
+    <aside className="rounded-2xl border bg-white p-6">
+      <h2 className="text-xl font-bold">
+        Campaign
+      </h2>
+
+      <div className="mt-6 space-y-4">
+        <p>
+          <strong>Company:</strong> {company}
+        </p>
+
+        <p>
+          <strong>Channel:</strong> {channel}
+        </p>
+
+        <p>
+          <strong>Tone:</strong> {tone}
+        </p>
+
+        <p>
+          <strong>Goal:</strong> {goal}
+        </p>
+      </div>
+    </aside>
   );
 }

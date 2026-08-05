@@ -7,6 +7,7 @@ export const mockLeads = [
     country: "USA",
     employees: 18,
     websiteScore: 68,
+    estimatedRevenue: 8500,
     opportunity: 92,
   },
   {
@@ -17,6 +18,7 @@ export const mockLeads = [
     country: "USA",
     employees: 26,
     websiteScore: 55,
+    estimatedRevenue: 12000,
     opportunity: 88,
   },
   {
@@ -27,6 +29,7 @@ export const mockLeads = [
     country: "USA",
     employees: 12,
     websiteScore: 61,
+    estimatedRevenue: 8500,
     opportunity: 80,
   },
   {
@@ -37,6 +40,7 @@ export const mockLeads = [
     country: "USA",
     employees: 42,
     websiteScore: 74,
+    estimatedRevenue: 15000,
     opportunity: 81,
   },
   {
@@ -47,6 +51,7 @@ export const mockLeads = [
     country: "USA",
     employees: 19,
     websiteScore: 58,
+    estimatedRevenue: 11000,
     opportunity: 90,
   },
   {
@@ -57,6 +62,7 @@ export const mockLeads = [
     country: "Canada",
     employees: 35,
     websiteScore: 79,
+    estimatedRevenue: 8500,
     opportunity: 76,
   },
 ];

@@ -1,21 +1,27 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+interface Props {
+  onCopy?: () => void;
+  onRegenerate?: () => void;
+}
 
-export default function MessageActions() {
+export default function MessageActions({
+  onCopy,
+  onRegenerate,
+}: Props) {
   return (
-    <Card className="rounded-3xl border border-slate-200 bg-white shadow-sm">
-      <CardHeader className="px-6 py-5">
-        <CardTitle>Actions</CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-wrap gap-3 p-6 pt-0">
-        <Button size="sm">Generate</Button>
-        <Button variant="outline" size="sm">
-          Save draft
-        </Button>
-        <Button variant="secondary" size="sm">
-          Send test
-        </Button>
-      </CardContent>
-    </Card>
+    <div className="mt-6 flex gap-3">
+      <button
+        onClick={onRegenerate}
+        className="rounded-xl bg-blue-600 px-5 py-3 text-white"
+      >
+        Regenerate
+      </button>
+
+      <button
+        onClick={onCopy}
+        className="rounded-xl bg-emerald-600 px-5 py-3 text-white"
+      >
+        Copy
+      </button>
+    </div>
   );
 }
